@@ -1,19 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import styles from './Statistics.module.css';
 
-const Statistics = () => {
-  const [good] = useState(0);
-  const [neutral] = useState(0);
-  const [bad] = useState(0);
+const Statistics = ({ good, neutral, bad }) => {
   const [total, setTotal] = useState(0);
-  const [positivePercentage, setPositivePercentage] = useState(0);
 
   useEffect(() => {
-    const updatedTotal = good + neutral + bad;
-    const updatedPositivePercentage = updatedTotal === 0 ? 0 : (good / updatedTotal) * 100;
-    setTotal(updatedTotal);
-    setPositivePercentage(updatedPositivePercentage);
+    setTotal(good + neutral + bad);
   }, [good, neutral, bad]);
+
+  const positivePercentage = useMemo(() => (total === 0 ? 0 : (good / total) * 100), [good, total]);
 
   return (
     <div className={styles.container}>
