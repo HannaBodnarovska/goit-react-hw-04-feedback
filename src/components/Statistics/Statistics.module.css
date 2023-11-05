@@ -1,0 +1,10 @@
+.container {
+    border: 1px solid #ccc;
+    padding: 16px;
+    margin-top: 16px;
+    text-align: center;
+}
+  
+.item {
+    margin: 8px;
+}

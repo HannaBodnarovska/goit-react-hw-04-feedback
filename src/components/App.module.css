@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 40px;
+    color: #010101;
+}
+  
+.header {
+    font-size: 40px;
+    color: #010101;
+}
+  
+.feedback-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
